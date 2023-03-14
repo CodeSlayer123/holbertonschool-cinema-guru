@@ -2,6 +2,7 @@ import React from 'react';
 import './general.css';
 
 export default function Input(label, type, className, value, setValue, icon, inputAttributes){
+
     const handleInput = (event, onChange ) => {
         setValue(event.target.value)
     }

@@ -1,6 +1,6 @@
 import './navigation.css';
 import { React, useState, useEffect } from 'react';
-import Header from '../../components/navigation/Header';
+import Activity from '../../components/Activity';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from "react-router-dom";
 
@@ -14,13 +14,32 @@ export default function SideBar(){
         setSelected(pageName)
     }
     useEffect(() =>{
-        
+        const accessToken = localStorage.getItem('accessToken')
+        axios.get('http://localhost:8000/api/components/activity', {headers: { authorization: `Bearer ${accessToken}` }})
+        .then((response) => {
+            if (response.data){
+                setActivities(response.data)
+            }
+        }
+        )
+
     })
     return(
         <div>
-            <li onClick={useNavigate('/home')}>Home</li>
-            <li onClick={useNavigate('/favorites')}>Favorites</li>
-            <li onClick={useNavigate('/watchlater')}>Watch Later</li>
+            <nav>
+                <ul>
+                    <li onClick={useNavigate('/home')}>Home</li>
+                    <li onClick={useNavigate('/favorites')}>Favorites</li>
+                    <li onClick={useNavigate('/watchlater')}>Watch Later</li>
+                </ul>
+                <ul>
+                    <Activity />
+
+                </ul>
+                {li.map((activity) => (<Activity />))}
+
+            </nav>
+            
 
         </div>
     )

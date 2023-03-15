@@ -21,7 +21,7 @@ export default function Dashboard(userUsername, setIsLoggedIn){
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/favorites" element={<Favorites />} />
-                    <Route path="/watchlater" element={<WhatchLater />} />
+                    <Route path="/watchlater" element={<WatchLater />} />
                     <Route path="/*" element={<Navigate to="/" />} />
 
 

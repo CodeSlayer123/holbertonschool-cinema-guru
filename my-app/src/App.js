@@ -1,7 +1,8 @@
 import './App.css';
 import { React, useState, useEffect } from 'react';
 import axios from 'axios';
-
+import Authentication from "./routes/auth/Authentication";
+import Dashboard from "./routes/dashboard/Dashboard";
 
 function App() {
   const [IsLoggedIn, setIsLoggedIn] = useState(false);
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      {isLoggedIn ? <Dashboard/>  : <Authentication/> }
+      {IsLoggedIn ? <Dashboard/>  : <Authentication/> }
       <header className="App-header">
         <p>test</p>
       </header>

@@ -3,6 +3,7 @@ import { React, useState, useEffect } from 'react';
 import Activity from '../../components/Activity';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 
 export default function SideBar(){
@@ -36,7 +37,6 @@ export default function SideBar(){
                     <Activity />
 
                 </ul>
-                {li.map((activity) => (<Activity />))}
 
             </nav>
             

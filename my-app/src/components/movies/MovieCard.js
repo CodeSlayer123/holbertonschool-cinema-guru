@@ -13,8 +13,8 @@ export default function MovieCard(movie){
     const [isWatchLater, setIsWatchLater] = useState(false);
     useEffect(() =>{
         const accessToken = localStorage.getItem('accessToken')
-        axios.get('http://localhost:8000//api/titles/favorite/')
-        axios.get('http://localhost:8000//api/titles/watchlater/')
+        axios.get('http://localhost:8000/api/titles/favorite/')
+        axios.get('http://localhost:8000/api/titles/watchlater/')
 
     })
     function handleClick(type){

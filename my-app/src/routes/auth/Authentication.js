@@ -2,6 +2,7 @@ import './auth.css';
 import { React, useState, useEffect } from 'react';
 import Login from './Login';
 import Register from './Register';
+import axios from 'axios';
 
 
 export default function Authentication(setIsLoggedIn, setUserUsername){
